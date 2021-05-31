@@ -1,0 +1,66 @@
+body {
+    background-color: rgb(132, 0, 255);
+    background-image: linear-gradient( to left,rgb(98, 0, 255) ,rgb(174, 0, 255));
+}
+
+section {
+    padding-top: 250px;
+    font: normal 40pt monospace;
+    text-align: center;
+    color: white;
+}
+button {
+    width: 75pt;
+    height: 45pt;
+    font-size: 29px;
+    border-radius: 20px;
+    border: solid 2px;
+    outline-style: none;
+    cursor: pointer;
+    color: white;
+    background-color: transparent;
+    transition: all 500ms cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+#start:hover {
+    color: rgb(9, 255, 0);
+    height: 40pt;
+    transition-duration: 0.5s;
+    
+}
+
+#stop:hover {
+    color: rgb(255, 0, 0);
+    transition-duration: 0.5s;
+    height: 40pt;
+}
+
+#reset:hover {
+    color: rgb(0, 225, 255);
+    transition-duration: 0.5s;
+    height: 40pt;
+}
+.remove {
+    color:rgb(9, 255, 0) ;
+    height: 60px;
+    cursor: default;
+    opacity: 0.5;
+    transition: all 0.5s;
+}
+#stop:focus{
+        color: rgb(255, 0, 0);
+        transition-duration: 0.5s;
+        height: 40pt;
+}
+#reset :focus{
+    color: rgb(0, 225, 255);
+    transition-duration: 0.5s;
+    height: 40pt;
+}
+#milisegundos {
+    font-size:25pt;
+}
+.click {
+    background-color:white;
+}
+

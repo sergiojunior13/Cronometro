@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Cronômetro</title>
+    <link rel="stylesheet" href="cronometro.css">
+</head>
+
+<body>
+    <section>
+        <div id="contador"><span id="horas">00</span>:<span id="minutos">00</span>:<span id="segundos">00</span>.<span id="milisegundos">00</span></div>
+        <div id="botoes">
+            <button onclick="reset()" id="reset" class="item">Reset</button>
+            <button onclick="stop()" id="stop" class="item">Stop</button>
+            <button class="startt" id="start">Start</button>
+        </div>
+    </section>
+    <script src="cronometro.js"></script>
+</body>
+
+</html>
