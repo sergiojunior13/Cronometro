@@ -50,7 +50,7 @@ function start() {
             }
             if(cmin == 60){
                 cmin = 0
-                cmin.innerHTML = "0" + cmin
+                min.innerHTML = "0" + cmin
                 if (cHora < 9){
                     cHora++
                     horas.innerHTML = `0${cHora}`
@@ -78,5 +78,3 @@ function reset() {
     seg.innerHTML = "00"
     mili.innerHTML = "00"
 }
-
-
