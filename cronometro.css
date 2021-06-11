@@ -5,13 +5,14 @@ body {
 
 section {
     padding-top: 250px;
-    font: normal 40pt monospace;
     text-align: center;
+    font: normal 15pt monospace;
     color: white;
 }
 button {
-    width: 75pt;
-    height: 45pt;
+    margin-bottom: 10px;
+    width: 80pt;
+    height: 50pt;
     font-size: 29px;
     border-radius: 20px;
     border: solid 2px;
@@ -21,10 +22,12 @@ button {
     background-color: transparent;
     transition: all 500ms cubic-bezier(0.23, 1, 0.320, 1);
 }
-
+#contador{
+    font: normal 50pt monospace;
+}
 #start:hover {
     color: rgb(9, 255, 0);
-    height: 40pt;
+    height: 60px;
     transition-duration: 0.5s;
     
 }
@@ -32,35 +35,46 @@ button {
 #stop:hover {
     color: rgb(255, 0, 0);
     transition-duration: 0.5s;
-    height: 40pt;
+    height: 60px;
 }
 
 #reset:hover {
     color: rgb(0, 225, 255);
     transition-duration: 0.5s;
-    height: 40pt;
+    height: 60px;
 }
 .remove {
     color:rgb(9, 255, 0) ;
     height: 60px;
     cursor: default;
-    opacity: 0.5;
+    opacity: 0.6;
     transition: all 0.5s;
 }
 #stop:focus{
         color: rgb(255, 0, 0);
         transition-duration: 0.5s;
-        height: 40pt;
+        height: 60px;
 }
-#reset :focus{
+#reset:focus{
     color: rgb(0, 225, 255);
     transition-duration: 0.5s;
-    height: 40pt;
+    height: 60px;
 }
-#milisegundos {
-    font-size:25pt;
+#conteudo{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10%;
+    background-color: rgba(255, 255, 255, 0.103);
+    margin-right: 10%;
+    text-align: initial;
+    font-size: 20px;
+    border-radius: 10px;
 }
-.click {
-    background-color:white;
+hr{
+    width: 90%;
+    border:solid;
+    border-width: 1px;
+    border-radius: 10px;
 }
+
 
