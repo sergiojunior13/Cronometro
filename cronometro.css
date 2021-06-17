@@ -59,21 +59,3 @@ button {
     transition-duration: 0.5s;
     height: 60px;
 }
-#conteudo{
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-left: 10%;
-    background-color: rgba(255, 255, 255, 0.103);
-    margin-right: 10%;
-    text-align: initial;
-    font-size: 20px;
-    border-radius: 10px;
-}
-hr{
-    width: 90%;
-    border:solid;
-    border-width: 1px;
-    border-radius: 10px;
-}
-
-
