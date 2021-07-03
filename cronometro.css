@@ -30,21 +30,18 @@ button {
     transition-duration: 0.5s;
     
 }
-
 #stop:hover {
     color: rgb(255, 0, 0);
     transition-duration: 0.5s;
     height: 60px;
 }
-
 #reset:hover {
     color: rgb(0, 225, 255);
     transition-duration: 0.5s;
     height: 60px;
 }
 .remove {
-    color:rgb(9, 255, 0) ;
-    height: 60px;
+    color:rgb(9, 255, 0);
     cursor: default;
     opacity: 0.6;
     transition: all 0.5s;
