@@ -56,3 +56,31 @@ button {
     transition-duration: 0.5s;
     height: 60px;
 }
+.about {
+    opacity: 0;
+}
+
+#about {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: start;
+    font-family: Arial;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 1px;
+    padding-bottom: 10px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    max-width: 800px;
+}
+
+hr {
+    background-color: black;
+    border:solid 1px;
+    border-radius: 10px;
+}
+p{
+    cursor: pointer;
+}
