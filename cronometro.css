@@ -58,6 +58,7 @@ button {
 }
 .about {
     opacity: 0;
+    font-size: 1px;
 }
 
 #about {
