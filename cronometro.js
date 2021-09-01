@@ -13,7 +13,7 @@ p.addEventListener("click", about)
 
 function ativar() {
     startbutton.classList = "remove"
-    clearInterval(onoff)
+    startbutton.removeEventListener("click",ativar)
     onoff = setInterval(start, 1000)
 }
 function start() {
@@ -53,10 +53,12 @@ function start() {
 }
 function stop() {
     startbutton.classList = "item"
+    startbutton.addEventListener("click",ativar)
     clearInterval(onoff)
 }
 function reset() {
     startbutton.classList = "item"
+    startbutton.addEventListener("click",ativar)
     clearInterval(onoff)
     cHora = 0
     cmin = 0
