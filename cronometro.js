@@ -1,4 +1,5 @@
 let loop;
+let milissegundos;
 let segundos;
 let minutos;
 let horas;
@@ -6,18 +7,19 @@ let horas;
 let spanHoras = document.getElementById("horas");
 let spanMinutos = document.getElementById("minutos");
 let spanSegundos = document.getElementById("segundos");
+let spanMilissegundos = document.getElementById("milissegundos");
 
 let botoes = document.getElementById("botoes");
-let btnStart = document.getElementById("btnStart")
+let btnStart = document.getElementById("btnStart");
 
-var dataInicial;
-var dataAtual;
-var diferenca = 0;
+let dataInicial;
+let dataAtual;
+let diferenca = 0;
 
 function ativar() {
     btnStart.disabled = "true";
     dataInicial = new Date().getTime() - diferenca;
-    loop = setInterval(start, 1000);
+    loop = setInterval(start, 50);
 }
 
 function start() {
@@ -28,14 +30,17 @@ function start() {
     var diferencaMinutos = Math.floor(diferencaSegundos / 60);
     var diferencaHoras = Math.floor(diferencaMinutos / 60);
 
+    milissegundos = calcularTempo(diferenca, 1000);
     segundos = calcularTempo(diferencaSegundos, 60);
     minutos = calcularTempo(diferencaMinutos, 60);
     horas = calcularTempo(diferencaHoras, 60);
 
+    milissegundos = formatar(milissegundos, "milissegundos");
     segundos = formatar(segundos, "segundos");
     minutos = formatar(minutos, "minutos");
     horas = formatar(horas, "horas");
 
+    spanMilissegundos.innerHTML = milissegundos;
     spanSegundos.innerHTML = segundos;
     spanMinutos.innerHTML = minutos;
     spanHoras.innerHTML = horas;
@@ -50,10 +55,11 @@ function reset() {
     btnStart.disabled = false;
     clearInterval(loop);
 
-    diferenca = 0
+    diferenca = 0;
     spanHoras.innerHTML = "00";
     spanMinutos.innerHTML = "00";
     spanSegundos.innerHTML = "00";
+    spanMilissegundos.innerHTML = "000";
 }
 
 function calcularTempo(tempo, numero) {
@@ -61,7 +67,7 @@ function calcularTempo(tempo, numero) {
 }
 
 function formatar(numero, tipo) {
-    if (tipo != "milisegundos") {
+    if (tipo != "milissegundos") {
         if (numero < 10) {
             numero = "0" + numero;
         }
