@@ -1,94 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+* {
+    margin: 0;
+}
+
 body {
-    background-color: rgb(132, 0, 255);
-    background-image: linear-gradient( to left,rgb(98, 0, 255) ,rgb(174, 0, 255));
-}
-section {
-    padding-top: 250px;
+    background-image: linear-gradient(45deg, #1707c4, #4800ad, #840cd3, #a511e0);
+    background-attachment: fixed;
+    color: white;
     text-align: center;
-    font: normal 15pt monospace;
-    color: white;
-}
-button {
-    margin-bottom: 10px;
-    width: 80pt;
-    height: 50pt;
-    font-size: 29px;
-    border-radius: 20px;
-    border: solid 2px;
-    outline-style: none;
-    cursor: pointer;
-    color: white;
-    background-color: transparent;
-    transition: all 500ms cubic-bezier(0.23, 1, 0.320, 1);
-}
-#contador{
-    font: normal 50pt monospace;
-}
-#start:hover {
-    color: rgb(9, 255, 0);
-    height: 60px;
-    transition-duration: 0.5s;
-    
-}
-#stop:hover {
-    color: rgb(255, 0, 0);
-    transition-duration: 0.5s;
-    height: 60px;
-}
-#reset:hover {
-    color: rgb(0, 225, 255);
-    transition-duration: 0.5s;
-    height: 60px;
-}
-.remove {
-    color:rgb(9, 255, 0);
-    cursor: default;
-    opacity: 0.6;
-    transition: all 0.5s;
-}
-#stop:focus{
-        color: rgb(255, 0, 0);
-        transition-duration: 0.5s;
-        height: 60px;
-}
-#reset:focus{
-    color: rgb(0, 225, 255);
-    transition-duration: 0.5s;
-    height: 60px;
-}
-.about {
-    opacity: 0;
-    font-size: 1px;
 }
 
-#about {
-    margin: 0 auto;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: transparent;
-    border:solid white;
+main {
+    margin: auto;
+    margin-top: calc(50vh - 100px);
+    width: fit-content;
+}
+
+.divContador {
+    font-size: 60px;
+    font-family: monospace;
+    margin: 10px;
+}
+
+.botoes {
+    font-family: 'Rubik', sans-serif;
     color: white;
-    font-weight: 600;
+    font-size: 30px;
+    background: none;
+    border: 3px solid white;
+    border-radius: 15px;
+    width: 100px;
+    padding: 5px;
+    margin: 3px;
+    cursor: pointer;
     transition: 200ms;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: start;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 1px;
-    padding-bottom: 10px;
-    border-radius: 10px;
-    max-width: 600px;
 }
 
-hr {
-    background-color: black;
-    border:solid 1px;
-    border-radius: 10px;
+.botoes:hover {
+    border-color: #ffffffa8;
+    color: #ffffffa8;
 }
-p{
-    cursor: pointer;
+
+.btnStart:hover {
+    border-color: #6cca81;
+    color: #6cca81;
 }
-p:hover{
-        color: rgba(255, 255, 255, 0.7);
+
+.btnStart:disabled {
+    opacity: 0.6;
+    border-color: #04ff3a;
+    color: #00ff37;
+    cursor: auto;
 }
