@@ -1,79 +1,79 @@
-let onoff, p = document.getElementsByTagName("p")[0]
-let cmin = 0
-let cseg = 0
-let cHora = 0
-let hora = document.getElementById("horas")
-let min = document.getElementById("minutos")
-let seg = document.getElementById("segundos")
-let startbutton = document.getElementById("start")
-let botoes = document.getElementById("botoes")
+let loop;
+let segundos;
+let minutos;
+let horas;
 
-startbutton.addEventListener("click", ativar)
-p.addEventListener("click", about)
+let spanHoras = document.getElementById("horas");
+let spanMinutos = document.getElementById("minutos");
+let spanSegundos = document.getElementById("segundos");
+
+let botoes = document.getElementById("botoes");
+let btnStart = document.getElementById("btnStart")
+
+var dataInicial;
+var dataAtual;
+var diferenca = 0;
 
 function ativar() {
-    startbutton.classList = "remove"
-    startbutton.removeEventListener("click",ativar)
-    onoff = setInterval(start, 1000)
+    btnStart.disabled = "true";
+    dataInicial = new Date().getTime() - diferenca;
+    loop = setInterval(start, 1000);
 }
+
 function start() {
-    if (cseg < 9) {
-        cseg++
-        seg.innerHTML = "0" + cseg
-    }
-    else {
-        cseg++
-        seg.innerHTML = cseg
-    }
-    if (cseg == 60) {
-        cseg = 0
-        seg.innerHTML = "0" + cseg
-        if (cmin < 9) {
-            cmin++
-            min.innerHTML = `0${cmin}`
-        }
-        else {
-            cmin++
-            min.innerHTML = cmin
-        }
-        if (cmin == 60) {
-            cmin = 0
-            min.innerHTML = "0" + cmin
-            if (cHora < 9) {
-                cHora++
-                horas.innerHTML = `0${cHora}`
+    dataAtual = new Date().getTime();
+    diferenca = dataAtual - dataInicial;
 
-            }
-            else {
-                cHora++
-                horas.innerHTML = cHora
-            }
-        }
-    }
+    var diferencaSegundos = Math.floor(diferenca / 1000);
+    var diferencaMinutos = Math.floor(diferencaSegundos / 60);
+    var diferencaHoras = Math.floor(diferencaMinutos / 60);
+
+    segundos = calcularTempo(diferencaSegundos, 60);
+    minutos = calcularTempo(diferencaMinutos, 60);
+    horas = calcularTempo(diferencaHoras, 60);
+
+    segundos = formatar(segundos, "segundos");
+    minutos = formatar(minutos, "minutos");
+    horas = formatar(horas, "horas");
+
+    spanSegundos.innerHTML = segundos;
+    spanMinutos.innerHTML = minutos;
+    spanHoras.innerHTML = horas;
 }
+
 function stop() {
-    startbutton.classList = "item"
-    startbutton.addEventListener("click",ativar)
-    clearInterval(onoff)
-}
-function reset() {
-    startbutton.classList = "item"
-    startbutton.addEventListener("click",ativar)
-    clearInterval(onoff)
-    cHora = 0
-    cmin = 0
-    cseg = 0
-    hora.innerHTML = "00"
-    min.innerHTML = "00"
-    seg.innerHTML = "00"
+    btnStart.disabled = false;
+    clearInterval(loop);
 }
 
-function about(){
-    let div = document.getElementById("about")
-    if(div.className == ""){
-        div.className = "about"
+function reset() {
+    btnStart.disabled = false;
+    clearInterval(loop);
+
+    diferenca = 0
+    spanHoras.innerHTML = "00";
+    spanMinutos.innerHTML = "00";
+    spanSegundos.innerHTML = "00";
+}
+
+function calcularTempo(tempo, numero) {
+    return tempo - (numero * Math.floor(tempo / numero));
+}
+
+function formatar(numero, tipo) {
+    if (tipo != "milisegundos") {
+        if (numero < 10) {
+            numero = "0" + numero;
+        }
+        return numero;
     }
     else {
-        div.className = ""
+        if (numero < 10) {
+            numero = "00" + numero;
+        }
+        else if (numero < 100) {
+            numero = "0" + numero;
+        }
+        return numero;
     }
 }
