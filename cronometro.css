@@ -5,10 +5,14 @@
 }
 
 body {
-    background-image: linear-gradient(45deg, #1707c4, #4800ad, #840cd3, #a511e0);
+    background-image: linear-gradient(45deg, #1707c4, #4800ad, #840cd3, #5f07c4);
     background-attachment: fixed;
     color: white;
     text-align: center;
+    background-size: 600% 600%;
+    -webkit-animation: GradientAnimation 20s ease infinite;
+    -moz-animation: GradientAnimation 20s ease infinite;
+    animation: GradientAnimation 20s ease infinite;
 }
 
 main {
@@ -21,6 +25,10 @@ main {
     font-size: 60px;
     font-family: monospace;
     margin: 10px;
+}
+
+.spanMilissegundos {
+    font-size: 35px;
 }
 
 .botoes {
@@ -52,4 +60,42 @@ main {
     border-color: #04ff3a;
     color: #00ff37;
     cursor: auto;
+}
+
+/*Animacão do fundo*/
+
+@-webkit-keyframes GradientAnimation {
+    0% {
+        background-position: 97% 0%
+    }
+    50% {
+        background-position: 4% 100%
+    }
+    100% {
+        background-position: 97% 0%
+    }
+}
+
+@-moz-keyframes GradientAnimation {
+    0% {
+        background-position: 97% 0%
+    }
+    50% {
+        background-position: 4% 100%
+    }
+    100% {
+        background-position: 97% 0%
+    }
+}
+
+@keyframes GradientAnimation {
+    0% {
+        background-position: 97% 0%
+    }
+    50% {
+        background-position: 4% 100%
+    }
+    100% {
+        background-position: 97% 0%
+    }
 }
