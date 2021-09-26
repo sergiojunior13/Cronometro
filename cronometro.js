@@ -62,6 +62,7 @@ function reset() {
     spanMinutos.innerHTML = "00";
     spanSegundos.innerHTML = "00";
     spanMilissegundos.innerHTML = "000";
+    titulo.innerHTML = "Cronômetro Online"
 }
 
 function calcularTempo(tempo, numero) {
