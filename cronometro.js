@@ -8,6 +8,7 @@ let spanHoras = document.getElementById("horas");
 let spanMinutos = document.getElementById("minutos");
 let spanSegundos = document.getElementById("segundos");
 let spanMilissegundos = document.getElementById("milissegundos");
+let titulo = document.getElementsByTagName("title")[0]
 
 let botoes = document.getElementById("botoes");
 let btnStart = document.getElementById("btnStart");
@@ -44,6 +45,7 @@ function start() {
     spanSegundos.innerHTML = segundos;
     spanMinutos.innerHTML = minutos;
     spanHoras.innerHTML = horas;
+    titulo.innerHTML = `${horas}:${minutos}:${segundos}`
 }
 
 function stop() {
